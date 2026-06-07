@@ -1,0 +1,10 @@
+division,clase,cantidad
+train,girasol,23
+train,rosa,28
+train,tulipan,35
+valid,girasol,14
+valid,rosa,7
+valid,tulipan,5
+test,girasol,4
+test,rosa,6
+test,tulipan,3
