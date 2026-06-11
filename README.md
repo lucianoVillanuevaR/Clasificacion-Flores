@@ -2,15 +2,11 @@
 
 ## Descripción del proyecto
 
-Este proyecto corresponde a un sistema de clasificación de flores mediante imágenes, desarrollado para la asignatura de Taller de Introducción a Visión por Computadora.
+Este proyecto corresponde al **Avance 2** de la asignatura **Taller de Introducción a Visión por Computadora**.
 
-El objetivo principal es preparar y analizar un dataset de imágenes de flores para posteriormente entrenar un modelo de clasificación capaz de identificar automáticamente tres tipos de flores:
+El objetivo del proyecto es preparar y analizar un dataset de imágenes de flores para una futura tarea de clasificación automática mediante modelos de visión por computador.
 
-- Girasol
-- Rosa
-- Tulipán
-
-En este avance todavía no se realiza el entrenamiento final del modelo. La etapa actual se enfoca en organizar, revisar y analizar el dataset de imágenes.
+En esta etapa todavía **no se entrena el modelo**. El avance se enfoca en la adquisición, organización, revisión y análisis inicial del dataset utilizando **Roboflow** y Python.
 
 ---
 
@@ -22,67 +18,145 @@ En este avance todavía no se realiza el entrenamiento final del modelo. La etap
 
 ---
 
-## Estado del proyecto
+## Objetivo del avance
 
-Este repositorio corresponde al **Avance 2** del proyecto.
+El objetivo de este avance es evidenciar la preparación inicial del dataset de imágenes, considerando:
 
-En esta etapa se realizó:
-
-- Organización del dataset de imágenes.
-- Separación del dataset en entrenamiento, validación y prueba.
-- Revisión de las clases disponibles.
-- Conteo de imágenes por clase.
-- Generación de un archivo CSV con el resumen del dataset.
-- Generación de gráficos para visualizar la distribución y ejemplos del dataset.
-
----
-
-## Cambio de enfoque del proyecto
-
-Inicialmente se consideró el dataset Iris como referencia clásica para clasificación de flores. Sin embargo, para orientar el proyecto directamente a Visión por Computador, se decidió trabajar con un dataset de imágenes gestionado en Roboflow.
-
-De esta manera, el proyecto deja de clasificar flores mediante datos numéricos y pasa a clasificar flores a partir de imágenes reales.
+- Selección y organización del dataset.
+- Configuración del proyecto en Roboflow.
+- Carga de imágenes en la plataforma.
+- Definición de clases.
+- Uso de etiquetas/tags para apoyar la revisión.
+- Análisis inicial del dataset mediante Roboflow Analytics.
+- Generación de resultados exploratorios con Python.
 
 ---
 
 ## Dataset utilizado
 
-El dataset fue gestionado mediante **Roboflow** y contiene imágenes de flores organizadas en tres divisiones:
+El dataset fue gestionado mediante **Roboflow**, plataforma utilizada para organizar datasets en proyectos de visión por computador.
 
-- `train`: imágenes para entrenamiento.
-- `valid`: imágenes para validación.
-- `test`: imágenes para prueba.
+El proyecto corresponde a una tarea de **clasificación de imágenes**, donde cada imagen pertenece a una clase principal de flor.
 
 ### Clases del dataset
 
-| Clase | Descripción |
+El dataset actual contiene cinco clases:
+
+| Clase en carpeta | Nombre formal |
 |---|---|
-| Girasol | Imágenes de girasoles |
-| Rosa | Imágenes de rosas |
-| Tulipán | Imágenes de tulipanes |
+| `dienteleon` | Diente de león |
+| `girasol` | Girasol |
+| `margarita` | Margarita |
+| `rosa` | Rosa |
+| `tulipan` | Tulipán |
 
 ---
 
 ## Distribución del dataset
 
-### Cantidad por división
+El dataset contiene un total de **255 imágenes**, distribuidas en conjuntos de entrenamiento, validación y prueba.
+
+### Distribución por división
 
 | División | Cantidad de imágenes |
 |---|---:|
-| Train | 86 |
-| Valid | 26 |
-| Test | 13 |
-| **Total** | **125** |
+| Train | 178 |
+| Valid | 53 |
+| Test | 24 |
+| **Total** | **255** |
 
-### Cantidad por clase
+### Distribución por clase
 
 | Clase | Cantidad de imágenes |
 |---|---:|
-| Girasol | 41 |
-| Rosa | 41 |
-| Tulipán | 43 |
+| Diente de león | 50 |
+| Girasol | 38 |
+| Margarita | 50 |
+| Rosa | 31 |
+| Tulipán | 86 |
+| **Total** | **255** |
 
-El dataset se encuentra relativamente balanceado, ya que las tres clases poseen una cantidad similar de imágenes.
+---
+
+## Análisis cuantitativo y cualitativo
+
+A nivel cuantitativo, el dataset cuenta con **255 imágenes** organizadas en cinco clases. La clase con mayor cantidad de imágenes es **tulipán**, con 86 imágenes, mientras que la clase con menor cantidad es **rosa**, con 31 imágenes.
+
+Esto indica que el dataset no se encuentra completamente balanceado. Sin embargo, para esta etapa inicial es suficiente para realizar la preparación del flujo de trabajo y el análisis preliminar. En etapas posteriores se recomienda aumentar la cantidad de imágenes de las clases con menor representación, especialmente **rosa** y **girasol**.
+
+A nivel cualitativo, las imágenes presentan variabilidad visual en fondos, iluminación, distancia y composición. Algunas flores aparecen en primer plano, mientras que otras se encuentran en jardines, campos o fondos naturales. Esta variabilidad es positiva porque permite preparar un dataset más diverso para el futuro entrenamiento del modelo.
+
+---
+
+## Configuración en Roboflow
+
+Se creó un proyecto en **Roboflow** configurado para una tarea de **Image Classification**. Esta configuración es adecuada para el tema del proyecto, ya que el objetivo es clasificar una imagen completa según el tipo de flor correspondiente.
+
+En Roboflow se realizó:
+
+- Creación del workspace/proyecto.
+- Carga de imágenes.
+- Definición de clases.
+- Organización del dataset.
+- Revisión de imágenes.
+- Uso de tags para apoyar el proceso de revisión.
+- Análisis preliminar mediante la sección Analytics.
+- Creación de una versión del dataset para exportación.
+
+---
+
+## Etiquetado y tags
+
+Las imágenes fueron organizadas según su clase principal:
+
+- `dienteleon`
+- `girasol`
+- `margarita`
+- `rosa`
+- `tulipan`
+
+Además, se utilizaron tags como apoyo para la revisión del dataset. Los tags permiten marcar características adicionales de las imágenes sin reemplazar la clase principal.
+
+### Tags utilizados
+
+| Tag | Uso |
+|---|---|
+| `revisado` | Imagen revisada y considerada correcta |
+| `primer_plano` | Flor visible de cerca |
+| `campo` | Imagen tomada en jardín, campo o entorno natural |
+| `varias_flores` | Imagen con más de una flor visible |
+| `borrosa` | Imagen con baja calidad o dudosa |
+
+Estos tags ayudan a organizar el dataset y detectar imágenes que podrían necesitar revisión antes del entrenamiento final.
+
+---
+
+## Analytics de Roboflow
+
+En la sección **Analytics** de Roboflow se revisaron estadísticas preliminares del dataset, incluyendo el total de imágenes, tamaño y proporciones.
+
+El análisis permitió observar:
+
+- Total de imágenes cargadas.
+- Tamaño general de las imágenes.
+- Variabilidad en proporciones visuales.
+- Distribución del dataset.
+- Existencia de imágenes anchas, muy anchas, altas y cuadradas.
+
+Esta información es útil para evaluar la calidad inicial del dataset antes de entrenar un modelo de clasificación.
+
+---
+
+## Preprocesamiento
+
+En Roboflow se generó una versión del dataset aplicando preprocesamiento para preparar las imágenes para etapas posteriores.
+
+El preprocesamiento utilizado fue:
+
+- **Auto-Orient:** corrección automática de orientación.
+- **Resize:** redimensionamiento de imágenes a **224x224 píxeles**.
+
+El tamaño **224x224** es adecuado para modelos CNN como **ResNet50**, que será considerado en la etapa de entrenamiento.
 
 ---
 
@@ -93,10 +167,10 @@ El dataset se encuentra relativamente balanceado, ya que las tres clases poseen 
 - Matplotlib
 - Pillow
 - Roboflow
-- Git / GitHub
+- Git
+- GitHub
 
----
-
+  
 git clone https://github.com/lucianoVillanuevaR/Clasificacion-Flores.git
 
 cd Clasificacion-Flores
