@@ -170,8 +170,8 @@ print("- resultados/ejemplos_dataset.png")
 
 print("\nConclusión del avance:")
 print("El dataset inicial de imágenes está organizado en train, valid y test.")
-print("Las clases encontradas corresponden a flores que serán clasificadas por el modelo.")
-print("El dataset se encuentra relativamente balanceado entre girasol, rosa y tulipan.")
+print("Las clases encontradas corresponden a cinco tipos de flores: dienteleon, girasol, margarita, rosa y tulipan.")
+print("El dataset presenta una distribución no completamente balanceada, ya que la clase tulipan posee más imágenes que rosa y girasol.")
 print("En esta etapa no se entrena el modelo, solo se prepara y analiza el dataset.")
 
 print("\nPróximo paso:")
